@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: waqo8ambb-go-gitops
+  description: This is GitOps manifest for waqo8ambb-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=waqo8ambb-go
+    backstage.io/kubernetes-id: waqo8ambb-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: waqo8ambb-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:waqo8ambb-go

@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+commonLabels:         
+  argocd/app-name: waqo8ambb-go
+  janus-idp.io/tekton: waqo8ambb-go
+  backstage.io/kubernetes-id: waqo8ambb-go
+  backstage.io/kubernetes-namespace: tssc-app 
+  app.kubernetes.io/part-of: waqo8ambb-go
+resources:
+  - deployment.yaml
+  - route.yaml
+  - service.yaml
